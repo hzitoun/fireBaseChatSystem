@@ -1,0 +1,72 @@
+﻿<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="simple group by chat using firebase" />
+    <meta name="author" content="Hamed ZITOUN(zitoun.hamed@gmail.com)" />
+    <title>FireBase Chat Group</title>
+    <link href="resources/css/bootstrap.css" rel="stylesheet" />
+    <link href="resources/css/font-awesome.css" rel="stylesheet" />
+    <link href="resources/css/style.css" rel="stylesheet" />
+    <script src="resources/js/jquery-1.11.1.js"></script>
+    <script src="resources/js/bootstrap.js"></script>
+    <script src="resources/js/idle.js"></script>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+</head>
+<body>
+    <a href="https://github.com/HamedZitoun/fireBaseChatSystem"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a>
+  <script src="resources/js/init.js"></script>
+  <div class="container">
+    <div class="row pad-top pad-bottom">
+        <div class=" col-lg-6 col-md-6 col-sm-6">
+            <div class="chat-box-div">
+                <!-- Header /-->
+                <div class="chat-box-head">
+                    Group Chat      
+                </div>
+                <div id="messagesDiv" class="panel-body chat-box-main">
+                 <!-- messages will be loaded here /-->
+             </div>
+             <!-- send div /-->
+             <div class="chat-box-footer">
+                <div class="input-group">
+                    <input id="messageInput" type="text" class="form-control" placeholder="your message...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-info" onclick="fnSendMsg();" type="button" id="send">SEND</button>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- connected users /-->
+    <div class="col-lg-3 col-md-3 col-sm-3">
+        <div class="chat-box-online-div">
+            <div class="chat-box-online-head">
+                Connected Users
+            </div>
+            <div id="presenceDiv" class="panel-body chat-box-online">
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-3 col-sm-3">
+    <div>
+  <p>Free Online Chat Group made by Hamed ZITOUN a Sotware Ninja</p>
+  <a href="mailto:zitoun.hamed@gmail.com">
+  <p>Don't hesitate to contact me</a>.</p>
+  <p></p>
+    </div> 
+
+</div>
+
+</div>
+</div>
+<script src="resources/js/chat.js"></script>
+<script src="resources/js/connecteduser.js"></script>
+
+ 
+
+</body>
+</html>
