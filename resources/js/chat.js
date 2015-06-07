@@ -14,8 +14,8 @@ var msgCount = 0;
 chatBase.on('child_added', function(snapshot) {
   msgCount++;
   if(msgCount == 1){
-  $('#messagesDiv').html('');
-}
+    $('#messagesDiv').html('');
+  }
   var message = snapshot.val();
   addMsg(message.username, message.msg, message.date);
 });
@@ -28,14 +28,17 @@ function addMsg(username, msg, date) {
  $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
 };
 function fnSendMsg(){
-  var msg = $('#messageInput').val();
-  var now = new Date();
-  var dateToPersist = now.toLocaleFormat('%d-%b-%Y %H:%M');
-  chatBase.push({ date : dateToPersist, msg: msg, username: currentUser});
-  $('#messageInput').val('');
+  var  msg = $('#messageInput').val();
+  if(msg != '')
+  {
+    var now = new Date();
+    var dateToPersist = now.toLocaleFormat('%d-%b-%Y %H:%M');
+    chatBase.push({ date : dateToPersist, msg: msg, username: currentUser});
+    $('#messageInput').val('');
+  }
 }
 
-if(firstMsg === 0){
-  $('#messagesDiv').html('<b>Don\'t be shy and Say Hey !</b>');
+if(msgCount === 0){
+  $('#messagesDiv').html('<b>Don\'t be Shy and Say Hey !</b>');
 }
 

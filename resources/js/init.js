@@ -5,6 +5,7 @@
 	* @Date: 2015-06-07
 	*/
 	var currentUser = '';
+	var currentStatus = "online";
 	var userBase = new Firebase("https://resplendent-fire-5470.firebaseio.com/");
 	var myUserRef = userBase.push();
 	var connectedRef = new Firebase("https://resplendent-fire-5470.firebaseio.com//.info/connected");
@@ -17,13 +18,14 @@
 			}
 			connectedRef.on("value", function(isOnline) {
 				if (isOnline.val()) {
-					setUserStatus("online");
+					 myUserRef.onDisconnect().remove();
+      				 setUserStatus("online");
 				}
 				else {
-					setUserStatus("away");
+					setUserStatus(currentStatus);
 				}
 			});
-			var currentStatus = "online";
+			
 			$('#popup').fadeOut(100);
 			$("#messageInput").removeAttr('disabled');
 			$("#send").removeAttr('disabled');
