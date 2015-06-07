@@ -10,10 +10,10 @@ $('#messageInput').keypress(function (e) {
     fnSendMsg();
   }
 });
-var firstMsg = 0;
+var msgCount = 0;
 chatBase.on('child_added', function(snapshot) {
-  firstMsg++;
-  if(firstMsg == 1){
+  msgCount++;
+  if(msgCount == 1){
   $('#messagesDiv').html('');
 }
   var message = snapshot.val();
@@ -22,7 +22,7 @@ chatBase.on('child_added', function(snapshot) {
 var direction = '';
 function addMsg(username, msg, date) {
   direction = 'left'; 
-  if(firstMsg % 2 == 0)
+  if(msgCount % 2 == 0)
    direction = 'right'; 
  $('<div/>').append('<div title="'+date+'" class="chat-box-'+direction+'">' + msg + '</div>').append('<div class="chat-box-name-'+direction+'"><img src="resources/img/user.png" alt="bootstrap Chat box user image" class="img-circle" /> -'+ username + ' </div><hr class="hr-clas" />').appendTo($('#messagesDiv'));
  $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
