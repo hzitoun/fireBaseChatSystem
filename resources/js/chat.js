@@ -25,7 +25,13 @@ function addMsg(username, msg, date) {
   if(msgCount % 2 === 0) {
     direction = 'right'; 
   }
- $('<div/>').append('<div title="'+date+'" class="chat-box-'+direction+'">' + msg + '</div>').append('<div class="chat-box-name-'+direction+'"><img src="resources/img/user.png" alt="bootstrap Chat box user image" class="img-circle" /> -'+ username + ' </div><hr class="hr-clas" />').appendTo($('#messagesDiv'));
+ $('
+<div/>').append('
+<div title="'+date+'" class="chat-box-'+direction+'">' + msg + '</div>').append('
+<div class="chat-box-name-'+direction+'">
+	<img src="resources/img/user.png" alt="bootstrap Chat box user image" class="img-circle" /> -'+ username + ' 
+</div>
+<hr class="hr-clas" />').appendTo($('#messagesDiv'));
  $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
 };
 function fnSendMsg(){
@@ -37,8 +43,8 @@ function fnSendMsg(){
     $('#messageInput').val('');
   }
 }
-
 if (msgCount === 0) {
-  $('#messagesDiv').html('<b>Don\'t be Shy and Say Hey !</b>');
+  $('#messagesDiv').html('
+<b>Don\'t be Shy and Say Hey !</b>');
 }
 
